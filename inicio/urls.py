@@ -3,5 +3,5 @@ from django.urls import path # type: ignore
 from . import views
 
 urlpatterns = [
-    path("inicio", views.index),
+    path("home", views.index),
 ]
