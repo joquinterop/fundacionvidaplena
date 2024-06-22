@@ -4,6 +4,15 @@ from django.http import HttpResponse # type: ignore
 # Create your views here.
 
 def index(request):
+    response_data = """
+        <ul>
+            <li><a href="/inicio/home">Home</a></li>
+        
+        </ul>
+    """
+    return HttpResponse()
+
+def home(request):
     return HttpResponse("PAGINA DE INICIO!!")
 
 def ubicacion(request):
