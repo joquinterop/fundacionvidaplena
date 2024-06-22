@@ -1,16 +1,12 @@
 from django.shortcuts import render # type: ignore
 from django.http import HttpResponse # type: ignore
+from django.template.loader import render_to_string  # type: ignore
 
 # Create your views here.
 
 def index(request):
-    response_data = """
-        <ul>
-            <li><a href="/inicio/home">Home</a></li>
-        
-        </ul>
-    """
-    return HttpResponse()
+    response_data = render_to_string("inicio/inicio.html")
+    return HttpResponse(response_data)
 
 def home(request):
     return HttpResponse("PAGINA DE INICIO!!")
