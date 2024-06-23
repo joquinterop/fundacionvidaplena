@@ -1,6 +1,5 @@
 from django.shortcuts import render # type: ignore
-from django.http import HttpResponse # type: ignore
-from django.template.loader import render_to_string # type: ignore
+from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect # type: ignore
 
 # Create your views here.
 
