@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block titulo  %}
-{% endblock  %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static "inicio/main.css" %}">
+{% endblock %}
 
 
 {% block contenido  %}  

@@ -4,7 +4,7 @@ from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpRespons
 # Create your views here.
 
 def index(request):
-    return render(request, "inicio/inicio.html")
+    return render(request, "inicio/inicio.html" )
 
 def home(request):
     return HttpResponse("PAGINA DE INICIO!!")

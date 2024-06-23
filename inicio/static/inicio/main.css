@@ -1,0 +1,119 @@
+/*===============Propiedades Globales================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: #ffff;
+    margin: 0; 
+    padding: 0; 
+  
+}
+
+.separator {
+    border: none;
+    border-top: 1px solid #ccc; 
+    margin: 20px 0; 
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columnas iguales */
+  gap: 10px;
+  /* Espaciado entre las imágenes */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-img {
+  width: 100%;
+  /* Las imágenes ocupan todo el ancho del contenedor */
+  height: 200px;
+  /* Altura fija para todas las imágenes */
+  object-fit: cover;
+  /* Ajustar la imagen al contenedor sin deformarla */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  /* Efecto de escala al pasar el cursor sobre la imagen */
+}
+
+/* Estilos para los botones */
+.btn2-container {
+        text-align: center ;
+        margin-top: 20px; 
+    }
+
+    .btn2 {
+        background-image: linear-gradient(to right, #F2A74B, #F28157);
+        text-align: center ;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    .btn2:hover {
+        background-image: linear-gradient(to right, #F2A74B, #F28157);
+    }
+
+
+
+
+/*===================MENU==========================*/
+
+.logo-img {
+    width: 40px; 
+    height: auto; 
+}
+
+ #menu a, button{
+     font-size: 18px !important;
+     font-weight: 600;   
+ }
+
+ #menu a{
+     color:#333333;
+     
+ }
+
+ .navbar {
+    width: 100%;
+    z-index: 1000; 
+    background-image: linear-gradient(to right,to right, #F2A74B, #F28157); 
+}
+
+
+.contenido-pagina {
+    padding-top: 60px; 
+}
+
+.navbar-nav .nav-link {
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    transform: scale(1.2);
+}
+
