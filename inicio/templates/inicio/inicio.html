@@ -1,14 +1,14 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block css_files %}
-<link rel="stylesheet" href="{% static "inicio/main.css" %}">
+  <link rel="stylesheet" href="{% static 'inicio/main.css' %}" />
 {% endblock %}
 
+{% block contenido %}
+  {% include 'inicio/includes/header.html' %}
 
-{% block contenido  %}  
-    {% include "inicio/includes/header.html" %}
-    
-    <h1>hola</h1>
-
-{% endblock  %}  
+  <!-- ========================================================== -->
+  <!-- CAROUSEL DE IMAGENES -->
+  <!-- ========================================================== -->
+{% endblock %}
