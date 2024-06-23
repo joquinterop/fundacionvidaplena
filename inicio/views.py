@@ -11,7 +11,7 @@ def home(request):
     return HttpResponse("PAGINA DE INICIO!!")
 
 def ubicacion(request):
-    return render(request, "404.html")
+    return HttpResponse("UBICACIÓN!!")
 
 def servicios(request):
     return HttpResponse("SERVICIOS!!")
