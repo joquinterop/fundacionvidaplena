@@ -1,5 +1,6 @@
 from django.shortcuts import render # type: ignore
 from django.http import HttpResponse # type: ignore
+from django.template.loader import render_to_string # type: ignore
 
 # Create your views here.
 
@@ -10,7 +11,7 @@ def home(request):
     return HttpResponse("PAGINA DE INICIO!!")
 
 def ubicacion(request):
-    return HttpResponse("UBICACIÓN!!")
+    return render(request, "404.html")
 
 def servicios(request):
     return HttpResponse("SERVICIOS!!")
