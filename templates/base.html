@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titulo  %}hola{% endblock  %}</title>
+    <title>hola</title>
 </head>
+
+{% block titulo  %}
+{% endblock  %}
 <body>
-    {% block contenido %}
+    
     <h1>Fundación Vida Plena</h1>
     <p> pepito perez </p>
+    {% block contenido %}
     {% endblock  %}
     
 </body>
