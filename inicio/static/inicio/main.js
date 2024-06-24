@@ -54,11 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const menuItems = [
         { text: 'Inicio', href: 'Index.html' },
-        { text: 'Paquetes de Viaje', href: '#intro' },
-        { text: 'Viaja por Chile', href: '#' },
-        { text: 'Latinoamérica', href: 'latinoamerica.html' },
+        { text: 'Ubicación', href: '#' },
+        { text: 'Servicios', href: '#' },
+        { text: 'Preguntas Frecuentes', href: '#' },
+        { text: 'Contacto', href: '#' },
         { text: 'Blog', href: '#' },
-        { text: 'Nosotros', href: 'nosotros.html' }
+        { text: 'Donaciones', href: '#' }
     ];
   
     menuItems.forEach(item => {
