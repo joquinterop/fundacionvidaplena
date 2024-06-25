@@ -1,4 +1,3 @@
-/*=========================NAVBAR================================*/
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.createElement('nav');
     navbar.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'p-3');
@@ -9,11 +8,18 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Agregar la imagen del logo a la izquierda
     const logoImage = document.createElement('img');
-    logoImage.src = 'fotos/logo_2.png'; // Ruta a la imagen de tu logo
+    logoImage.src = '/static/inicio/fotos/logo_2.png'; // Asegúrate de que la ruta sea correcta
     logoImage.classList.add('logo-img');
   
     const brand = document.createElement('a');
     brand.classList.add('navbar-brand');
+  
+    // Crear el elemento del carrito de compras
+    const cartLink = document.createElement('a');
+    cartLink.href = '#';
+    cartLink.id = 'cart-link';
+    cartLink.innerHTML = '<i class="fas fa-shopping-cart"></i>'; // Usando FontAwesome para el icono del carrito
+    cartLink.style.marginLeft = '10px'; // Añadir algo de margen entre el logo y el carrito
   
     // Incluir el logo, el texto "VIDA PLENA" y el botón del carrito de compra
     brand.innerHTML = `
@@ -69,4 +75,4 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.appendChild(container);
   
     document.body.prepend(navbar);
-  });
+});
