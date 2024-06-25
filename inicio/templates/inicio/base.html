@@ -9,21 +9,24 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/4f8f9ca200.js" crossorigin="anonymous"></script>
-    <title>Fundación</title>
-    <link rel="stylesheet" href="{% static 'inicio/main.css' %}">
+    <title>Título de tu página</title>
+    {% block css_files %}
+    {% endblock %}
 </head>
 
 <body>
     <div id="navbar-container"></div>
-    
+
+    {% block contenido %}
+    {% endblock %}
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="{% static 'inicio/main.js' %}"></script>
-    
-    {% block contenido %}
+
+    {% block js_files %}
     {% endblock %}
-    
 </body>
 </html>
