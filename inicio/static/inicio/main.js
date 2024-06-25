@@ -5,28 +5,24 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const container = document.createElement('div');
     container.classList.add('container');
+
+    /*
   
     // Agregar la imagen del logo a la izquierda
     const logoImage = document.createElement('img');
-    logoImage.src = '/static/inicio/images/carrousel-1.png'; // Asegúrate de que la ruta sea correcta
+    logoImage.src = '/static/inicio/fotos/logo_2.png'; // Asegúrate de que la ruta sea correcta
     logoImage.classList.add('logo-img');
   
     const brand = document.createElement('a');
     brand.classList.add('navbar-brand');
   
-    // Crear el elemento del carrito de compras
-    const cartLink = document.createElement('a');
-    cartLink.href = '#';
-    cartLink.id = 'cart-link';
-    cartLink.innerHTML = '<i class="fas fa-shopping-cart"></i>'; // Usando FontAwesome para el icono del carrito
-    cartLink.style.marginLeft = '10px'; // Añadir algo de margen entre el logo y el carrito
-  
-    // Incluir el logo, el texto "VIDA PLENA" y el botón del carrito de compra
+    // Incluir el logo y el texto "VIDA PLENA"
     brand.innerHTML = `
         ${logoImage.outerHTML}
         <span class="fs-5 text-white fw-bold">Vida Plena</span>
     `;
-    brand.appendChild(cartLink);
+
+    */
   
     const toggleButton = document.createElement('button');
     toggleButton.classList.add('navbar-toggler');
