@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.createElement('div');
     container.classList.add('container');
 
-    /*
+    
   
     // Agregar la imagen del logo a la izquierda
     const logoImage = document.createElement('img');
-    logoImage.src = '/static/inicio/fotos/logo_2.png'; // Asegúrate de que la ruta sea correcta
+    logoImage.src = '/static/inicio/images/logo.png'; // Asegúrate de que la ruta sea correcta
     logoImage.classList.add('logo-img');
   
     const brand = document.createElement('a');
@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <span class="fs-5 text-white fw-bold">Vida Plena</span>
     `;
 
-    */
-  
     const toggleButton = document.createElement('button');
     toggleButton.classList.add('navbar-toggler');
     toggleButton.type = 'button';
@@ -65,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     collapseDiv.appendChild(ul);
-    //container.appendChild(brand);
+    container.appendChild(brand);
     container.appendChild(toggleButton);
     container.appendChild(collapseDiv);
     navbar.appendChild(container);
