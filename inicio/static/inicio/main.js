@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Agregar la imagen del logo a la izquierda
     const logoImage = document.createElement('img');
-    logoImage.src = '/static/inicio/images/logo.png'; // Asegúrate de que la ruta sea correcta
+    logoImage.src = '/static/inicio/images/logo_blanco.png'; // Asegúrate de que la ruta sea correcta
     logoImage.classList.add('logo-img');
   
     const brand = document.createElement('a');
