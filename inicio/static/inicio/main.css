@@ -116,3 +116,11 @@ body {
     transform: scale(1.2);
 }
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    cursor: pointer; 
+}
+
+
+
