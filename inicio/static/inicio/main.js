@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     collapseDiv.appendChild(ul);
-    container.appendChild(brand);
+    //container.appendChild(brand);
     container.appendChild(toggleButton);
     container.appendChild(collapseDiv);
     navbar.appendChild(container);
