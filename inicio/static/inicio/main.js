@@ -87,3 +87,47 @@ typewriter
   .pauseFor(200)
   .deleteChars(10)
   .start();
+
+  /*===========================FOOTER==================================*/
+
+const footer = document.querySelector('.footer');
+
+const footerContainer = document.createElement('div');
+footerContainer.classList.add('footer-container');
+
+const column1 = document.createElement('div');
+column1.classList.add('column');
+column1.innerHTML = `
+<h3>Información de contacto:</h3>
+<p>Teléfono: +56 9 1234 5678</p>
+<p>Correo electrónico: info@vidaplena.com</p>
+`;
+
+const column2 = document.createElement('div');
+column2.classList.add('column');
+column2.innerHTML = `
+<h3>Información Importante:</h3>
+<ul>
+  <li><a href="formulario.html">Contacto</a></li>
+  <li><a href="#">Preguntas frecuentes</a></li>
+  <li><a href="#">Términos y condiciones</a></li>
+</ul>
+`;
+
+const column3 = document.createElement('div');
+column3.classList.add('column');
+column3.innerHTML = `
+<h3>¡Suscríbete a nuestro boletín!</h3>
+<p>Recibe las últimas noticias y promociones directamente en tu bandeja de entrada.</p>
+<form>
+  <input type="email" placeholder="Correo electrónico" required>
+  <button type="submit">Suscribirse</button>
+</form>
+`;
+
+
+footer.appendChild(footerContainer);
+footerContainer.appendChild(column1);
+footerContainer.appendChild(column2);
+footerContainer.appendChild(column3);
+
