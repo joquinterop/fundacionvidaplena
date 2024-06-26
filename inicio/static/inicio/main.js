@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ul.classList.add('navbar-nav', 'me-auto', 'mb-2', 'mb-lg-0');
   
     const menuItems = [
-        { text: 'Inicio', href: 'Index.html' },
+        { text: 'Inicio', href: 'inicio.html' },
         { text: 'Ubicación', href: '#' },
         { text: 'Servicios', href: '#' },
         { text: 'Preguntas Frecuentes', href: '#' },
