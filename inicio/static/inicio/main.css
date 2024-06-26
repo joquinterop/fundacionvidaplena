@@ -91,17 +91,16 @@ body {
   }
 
   
-/*===================SERVICIO INICIO==========================*/
-
-#locak {
-    margin-top: 50px;
-    background-color: beige;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 300px;
+/*===================BANNER==========================*/
+.banner {
+    position: relative;
+    height: 27rem;
 }
 
-.servicio{
-    background: image();
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+
 
