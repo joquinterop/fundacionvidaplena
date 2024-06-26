@@ -92,6 +92,10 @@ body {
 
   
 /*===================BANNER==========================*/
+.bg-beige {
+    background-color: beige;
+}
+
 .banner {
     position: relative;
     height: 27rem;
