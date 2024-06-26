@@ -69,7 +69,7 @@ body {
     cursor: pointer; 
 }
 
-/*======================TYPEWRITER=======================*/
+/*======================TIPEO=======================*/
 
 .tipeo{
     color: #F29F05;
@@ -90,4 +90,18 @@ body {
   color: white; 
   }
 
+  
+/*===================SERVICIO INICIO==========================*/
+
+#locak {
+    margin-top: 50px;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 300px;
+}
+
+.servicio{
+    background: image();
+}
 
