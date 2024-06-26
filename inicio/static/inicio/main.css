@@ -1,4 +1,4 @@
-/*===============Propiedades Globales================*/
+/*===============PROPIEDADES GLOBALES================*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{
@@ -18,65 +18,12 @@ body {
   
 }
 
-
+/*===================SEPARADOR==========================*/
 .separator {
     border: none;
     border-top: 1px solid #ccc; 
     margin: 20px 0; 
 }
-
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 3 columnas iguales */
-  gap: 10px;
-  /* Espaciado entre las imágenes */
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.gallery-img {
-  width: 100%;
-  /* Las imágenes ocupan todo el ancho del contenedor */
-  height: 200px;
-  /* Altura fija para todas las imágenes */
-  object-fit: cover;
-  /* Ajustar la imagen al contenedor sin deformarla */
-  border-radius: 7px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-.gallery-img:hover {
-  transform: scale(1.05);
-  /* Efecto de escala al pasar el cursor sobre la imagen */
-}
-
-/* Estilos para los botones */
-.btn2-container {
-        text-align: center ;
-        margin-top: 20px; 
-    }
-
-    .btn2 {
-        background-image: linear-gradient(to right, #F2A74B, #F28157);
-        text-align: center ;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background 0.3s ease-in-out;
-    }
-
-    .btn2:hover {
-        background-image: linear-gradient(to right, #F2A74B, #F28157);
-    }
-
-
-
 
 /*===================MENU==========================*/
 
@@ -122,5 +69,25 @@ body {
     cursor: pointer; 
 }
 
+/*======================TYPEWRITER=======================*/
+
+.tipeo{
+    color: #F29F05;
+}
+
+/*===================CAROUSEL DE IMAGENES==========================*/
+
+.carousel-inner img {
+    max-height:50rem !important;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-100%);
+  text-align: left; 
+  color: white; 
+  }
 
 

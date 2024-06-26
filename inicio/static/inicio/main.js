@@ -1,3 +1,4 @@
+/*===============NAVBAR================*/
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.createElement('nav');
     navbar.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'p-3');
@@ -70,3 +71,19 @@ document.addEventListener("DOMContentLoaded", function () {
   
     document.body.prepend(navbar);
 });
+
+/*===============TYPEWRITER================*/
+
+let app = document.getElementById('typewriter');
+
+let typewriter = new Typewriter(app, {
+  loop: true,
+  delay: 75,
+});
+
+typewriter
+  .pauseFor(2500)
+  .typeString('¡VIVIENDO CON DIGNIDAD Y ALEGRÍA!')
+  .pauseFor(200)
+  .deleteChars(10)
+  .start();
