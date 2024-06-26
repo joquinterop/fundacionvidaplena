@@ -7,10 +7,10 @@ def index(request):
     return render(request, "inicio/inicio.html" )
 
 def home(request):
-    return HttpResponse("PAGINA DE INICIO!!")
+    return render(request, "inicio/inicio.html")
 
 def ubicacion(request):
-    return HttpResponse("UBICACIÓN!!")
+    return render(request, "inicio/ubicacion.html")
 
 def servicios(request):
     return HttpResponse("SERVICIOS!!")
