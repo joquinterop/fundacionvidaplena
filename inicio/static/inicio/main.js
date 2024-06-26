@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const menuItems = [
         { text: 'Inicio', href: 'inicio.html' },
-        { text: 'Ubicación', href: '#' },
+        { text: 'Ubicación', href: 'ubicacion.html' },
         { text: 'Servicios', href: '#' },
         { text: 'Preguntas Frecuentes', href: '#' },
         { text: 'Contacto', href: '#' },
