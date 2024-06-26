@@ -6,7 +6,7 @@ from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpRespons
 def index(request):
     return render(request, "inicio/inicio.html" )
 
-def home(request):
+def inicio(request):
     return render(request, "inicio/inicio.html")
 
 def ubicacion(request):
