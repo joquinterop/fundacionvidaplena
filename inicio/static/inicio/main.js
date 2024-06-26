@@ -83,7 +83,7 @@ let typewriter = new Typewriter(app, {
 
 typewriter
   .pauseFor(2500)
-  .typeString('¡VIVIENDO CON DIGNIDAD Y ALEGRÍA!')
+  .typeString('¡TU HOGAR EN PLENO CORAZON DE SANTIAGO!')
   .pauseFor(200)
   .deleteChars(10)
   .start();
