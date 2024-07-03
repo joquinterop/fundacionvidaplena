@@ -5,26 +5,25 @@ from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpRespons
 # Create your views here.
 
 def index(request):
-    return render(request, "inicio/inicio.html" )
+    return render(request, 'inicio/inicio.html')
 
-def inicio(request):
-    url_inicio = reverse('inicio')
-    return render(request, "inicio/inicio.html", {'url_inicio': url_inicio})
+def home(request):
+    return render(request, 'inicio/inicio.html')
 
 def ubicacion(request):
-    return render(request, "inicio/ubicacion.html")
+    return render(request, 'inicio/ubicacion.html')
 
 def servicios(request):
-    return HttpResponse("SERVICIOS!!")
+    return render(request, 'inicio/servicios.html')
 
 def preguntas_frecuentes(request):
-    return HttpResponse("PREGUNTAS FRECUENTES!!")
+    return render(request, 'inicio/preguntas_frecuentes.html')
 
 def contacto(request):
-    return HttpResponse("CONTACTO!!")
+    return render(request, 'inicio/contacto.html')
 
 def blog(request):
-    return HttpResponse("BLOG!!")
+    return render(request, 'inicio/blog.html')
 
 def donaciones(request):
-    return HttpResponse("DONACIONES!!")
+    return render(request, 'inicio/donaciones.html')
