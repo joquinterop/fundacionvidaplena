@@ -15,7 +15,7 @@ urlpatterns = [
 """
 urlpatterns = [
     path("", views.index, name='index'),
-    path('inicio/inicio/', views.home, name='inicio'),
+    path('inicio/', views.home, name='inicio'),
     path('inicio/ubicacion/', views.ubicacion, name='ubicacion'),
     path('inicio/servicios/', views.servicios, name='servicios'),
     path('inicio/preguntas_frecuentes/', views.preguntas_frecuentes, name='preguntas_frecuentes'),
