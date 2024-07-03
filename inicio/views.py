@@ -1,3 +1,4 @@
+from django.urls import reverse # type: ignore
 from django.shortcuts import render # type: ignore
 from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect # type: ignore
 
@@ -7,7 +8,8 @@ def index(request):
     return render(request, "inicio/inicio.html" )
 
 def inicio(request):
-    return render(request, "inicio/inicio.html")
+    url_inicio = reverse('inicio')
+    return render(request, "inicio/inicio.html", {'url_inicio': url_inicio})
 
 def ubicacion(request):
     return render(request, "inicio/ubicacion.html")
