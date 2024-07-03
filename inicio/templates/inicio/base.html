@@ -5,27 +5,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de tu página</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'inicio/main.css' %}" />
     <script src="https://kit.fontawesome.com/4f8f9ca200.js" crossorigin="anonymous"></script>
-    <title>Título de tu página</title>
-
 </head>
 
 <body>
-    <div id="navbar-container"></div>
+    <!-- Navbar dinámico creado con JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.createElement('nav');
+            navbar.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'p-3');
+            navbar.id = 'menu';
+          
+            const container = document.createElement('div');
+            container.classList.add('container');
+          
+            const logoImage = document.createElement('img');
+            logoImage.src = '{% static "inicio/images/logo_blanco.png" %}'; 
+            logoImage.classList.add('logo-img');
+          
+            const brand = document.createElement('a');
+            brand.classList.add('navbar-brand');
+          
+            brand.innerHTML = `
+                ${logoImage.outerHTML}
+                <span class="fs-5 text-white fw-bold">Vida Plena</span>
+            `;
+          
+            const toggleButton = document.createElement('button');
+            toggleButton.classList.add('navbar-toggler');
+            toggleButton.type = 'button';
+            toggleButton.dataset.bsToggle = 'collapse';
+            toggleButton.dataset.bsTarget = '#navbarSupportedContent';
+            toggleButton.setAttribute('aria-controls', 'navbarSupportedContent');
+            toggleButton.setAttribute('aria-expanded', 'false');
+            toggleButton.setAttribute('aria-label', 'Toggle navigation');
+            toggleButton.innerHTML = `<span class="navbar-toggler-icon"></span>`;
+          
+            const collapseDiv = document.createElement('div');
+            collapseDiv.classList.add('collapse', 'navbar-collapse');
+            collapseDiv.id = 'navbarSupportedContent';
+          
+            const ul = document.createElement('ul');
+            ul.classList.add('navbar-nav', 'me-auto', 'mb-2', 'mb-lg-0');
+          
+            const menuItems = [
+                { text: 'Inicio', href: 'inicio.html' },
+                { text: 'Ubicación', href: '#' },
+                { text: 'Servicios', href: '#' },
+                { text: 'Preguntas Frecuentes', href: '#' },
+                { text: 'Contacto', href: '#' },
+                { text: 'Blog', href: '#' },
+                { text: 'Donaciones', href: '#' }
+            ];
+          
+            menuItems.forEach(item => {
+                const li = document.createElement('li');
+                li.classList.add('nav-item');
+          
+                const a = document.createElement('a');
+                a.classList.add('nav-link');
+                a.href = item.href;
+                a.textContent = item.text;
+          
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+          
+            collapseDiv.appendChild(ul);
+            container.appendChild(brand);
+            container.appendChild(toggleButton);
+            container.appendChild(collapseDiv);
+            navbar.appendChild(container);
+          
+            document.body.prepend(navbar);
+        });
+    </script>
 
+    <!-- Contenido de la página -->
     {% block contenido %}
     {% endblock %}
 
+    <!-- Scripts al final del cuerpo -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="{% static 'inicio/main.js' %}"></script>
 
+    <!-- Bloque opcional para scripts adicionales -->
     {% block js_files %}
     {% endblock %}
 </body>
