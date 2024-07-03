@@ -3,31 +3,41 @@
 
 {% block contenido %}
 
-  <section class="d-flex flex-column justify-content-center align-items-start pt-5 text-left w-50 m-auto" id="intro">
-    <h1 class="p-3 fs-2 border-top border-3"><span>Fundación Vida Plena</span></h1>
-    <p class="p-3 fs-5"> <!-- Aquí he cambiado fs-4 a fs-5 para reducir un poco el tamaño -->
-      En la fundación Vida Plena, nos dedicamos con amor y devoción a brindar un hogar lleno de cariño y cuidado a nuestros ancianos.
-      Desde 1995, nuestra misión ha sido asegurar que cada persona mayor que llega a nuestra casa de reposo reciba la atención médica,
-      el afecto y la dignidad que merece. Todo comenzó con un grupo de personas generosas que, unidas por un mismo propósito, construyeron
-      nuestro primer hogar con sus propias manos y corazones.
-      <br />
-      <br />
-      Hoy, seguimos avanzando gracias a la solidaridad de particulares y al trabajo incansable de nuestros voluntarios y personal remunerado.
-      Cada día, nos esforzamos por ofrecer un ambiente seguro y acogedor, donde nuestros ancianos pueden vivir sus días con alegría y tranquilidad.
-      <br />
-      <br />
-      Aquí, no solo ofrecemos cuidados médicos y alojamiento, sino también un lugar donde el amor y el respeto son la norma. En la fundación
-      Vida Plena, creemos que todos nuestros residentes merecen vivir con dignidad y rodeados de personas que se preocupan por ellos. ¡Únete a nosotros
-      y forma parte de esta hermosa misión!
-    </p>
+
+  <section class="container py-5">
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="text-center">
+          <h1 class="p-3 fs-2"><span>Fundación Vida Plena</span></h1>
+          <p class="p-3 fs-5 text-left">
+            En la fundación Vida Plena, nos dedicamos con amor y devoción a brindar un hogar lleno de cariño y cuidado a nuestros ancianos.
+            Desde 1995, nuestra misión ha sido asegurar que cada persona mayor que llega a nuestra casa de reposo reciba la atención médica,
+            el afecto y la dignidad que merece. Todo comenzó con un grupo de personas generosas que, unidas por un mismo propósito, construyeron
+            nuestro primer hogar con sus propias manos y corazones.
+            <br />
+            <br />
+            Hoy, seguimos avanzando gracias a la solidaridad de particulares y al trabajo incansable de nuestros voluntarios y personal remunerado.
+            Cada día, nos esforzamos por ofrecer un ambiente seguro y acogedor, donde nuestros ancianos pueden vivir sus días con alegría y tranquilidad.
+            <br />
+            <br />
+            Aquí, no solo ofrecemos cuidados médicos y alojamiento, sino también un lugar donde el amor y el respeto son la norma. En la fundación
+            Vida Plena, creemos que todos nuestros residentes merecen vivir con dignidad y rodeados de personas que se preocupan por ellos. ¡Únete a nosotros
+            y forma parte de esta hermosa misión!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <img src="{% static 'inicio/images/banner_nosotros.png' %}" class="img-fluid" alt="Imagen de la fundación">
+      </div>
+    </div>
   </section>
 
- 
-  <div class="w-50 m-auto">
-    <img src="{% static 'inicio/images/banner_nosotros.png' %}" class="d-block w-100" alt="" />
-  </div>
+  <hr class="separator" />
 
-  <br />
+  <section class="container py-5">
+    <h2 class="text-center">Ubicación de Nuestra Residencia</h2>
+    
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer"></footer>
