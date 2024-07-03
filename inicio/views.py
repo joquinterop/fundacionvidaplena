@@ -1,5 +1,5 @@
 from django.urls import reverse # type: ignore
-from django.shortcuts import render, redirect # type: ignore
+from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
 from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect # type: ignore
 from django.views import View # type: ignore
 from django.contrib.auth.models import User # type: ignore
@@ -188,29 +188,13 @@ def aportador_del(request,pk):
         context = {"mensaje":mensaje,"aportadores":aportadores}
         return render(request,'inicio/aportador_list.html',context)
     
-def aportador_edit(request,pk):
-    try:
-        aportador = Aportador.objects.get(id_aportador=pk)
-        context = {}
-        if aportador:
-            print("Edit encontro el aportador...")
-            if request.method == "POST":
-                print("Edit, es un post...")
-                form = AportadorForm(request.POST,instance=aportador)
-                form.save()
-                mensaje = "Bien, datos actualizados..."
-                print(mensaje)
-                context = {"aportador":aportador,"form":form,"mensaje":mensaje}
-                return render(request,'inicio/aportador_edit.html',context)
-            else:
-                print("Edit, no es un post...")
-                form = AportadorForm(instance=aportador)
-                mensaje = ""
-                context = {"aportador":aportador,"form":form,"mensaje":mensaje}
-                return render(request,'aportador_edit.html',context)
-    except:
-        print("Error, id no existe...")
-        aportadores = Aportador.objects.all()
-        mensaje = "Error, id no existe..."
-        context = {"mensaje":mensaje,"aportadores":aportadores}
-        return render(request,'inicio/aportador_list.html',context)
+def aportador_edit(request, pk):
+    aportador = get_object_or_404(Aportador, id_aportador=pk)  # Obtener el aportador por su id_aportador
+    if request.method == 'POST':
+        form = AportadorForm(request.POST, instance=aportador)
+        if form.is_valid():
+            form.save()
+            return redirect('aportador_list')  # Redirigir a la lista de aportadores después de guardar
+    else:
+        form = AportadorForm(instance=aportador)
+    return render(request, 'inicio/aportador_edit.html', {'form': form})

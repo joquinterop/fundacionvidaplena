@@ -16,7 +16,5 @@ class ResidenteForm(ModelForm):
         
 class AportadorForm(ModelForm):
     class Meta:
-        
-        
         model = Aportador
         fields = '__all__'
