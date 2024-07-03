@@ -2,9 +2,186 @@
 {% load static %}
 
 {% block contenido %}
-<h1> HOLA JOSE </h1>
+
+
+  <section class="banner-preguntas-frecuentes">
+    <img src="{% static 'inicio/images/preguntas_frecuentes.png' %}" class="img-fluid" alt="Banner Preguntas Frecuentes">
+  </section>
+
+
+  <section class="container-preguntas-frecuentes py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center mb-5">Preguntas Frecuentes</h1>
+      </div>
+    </div>
+
+
+    <div class="accordion" id="accordionPreguntasFrecuentes">
+
+      <!-- Pregunta 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            ¿Qué servicios ofrece la Fundación Apoyo?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            La Fundación Vida Plena ofrece servicios de residencia para personas de la tercera edad, que incluyen alojamiento, alimentación, cuidados médicos, medicamentos y ropa. Además, organizamos actividades recreativas y talleres para mantener a nuestros residentes activos y comprometidos.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Cómo puedo inscribir a un familiar en la casa de reposo?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            Para inscribir a un familiar, por favor contáctenos a través de nuestro formulario en línea o llámenos directamente. Programaremos una visita para que conozca nuestras instalaciones y podamos discutir las necesidades específicas de su ser querido.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Cuáles son los costos de los servicios?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            Los costos de los servicios se determinan según las necesidades individuales de cada residente. Ofrecemos precios módicos, ya que operamos sin fines de lucro. Para obtener una cotización específica, por favor contáctenos directamente.
+        </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Cómo se financia la fundación?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            La Fundación Vida Plena se financia a través de aportes de particulares, colectas anuales y las contribuciones de las familias de nuestros residentes. Además, recibimos el apoyo de voluntarios que ayudan con diversas actividades y mantenimiento de la infraestructura.
+        </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Cómo puedo hacer una donación?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            Las donaciones pueden hacerse a través de nuestro sitio web, mediante transferencia bancaria o en persona en nuestras oficinas. Toda contribución, sin importar su tamaño, es invaluable para nosotros y nos ayuda a seguir brindando un hogar seguro y amoroso a nuestros ancianos.
+        </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Puedo ser voluntario en la Fundación Vida Plena? 
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            ¡Por supuesto! Siempre estamos buscando voluntarios apasionados que deseen contribuir con su tiempo y habilidades. Puede registrarse como voluntario a través de nuestro sitio web o contactándonos directamente para obtener más información.
+        </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Qué tipo de atención médica ofrecen? 
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            Contamos con un equipo de enfermeras disponibles las 24 horas del día para atender cualquier necesidad médica de nuestros residentes. También ofrecemos acceso a médicos y otros profesionales de la salud según sea necesario.
+        </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Cómo se garantiza la seguridad de los residentes? 
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            La seguridad de nuestros residentes es nuestra máxima prioridad. Nuestra casa de reposo está equipada con medidas de seguridad adecuadas y contamos con personal capacitado para manejar emergencias y brindar atención constante.
+        </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Cómo se manejan las visitas familiares? 
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            Las visitas familiares son bienvenidas y alentadas. Tenemos horarios de visita establecidos para asegurar que nuestros residentes puedan disfrutar del tiempo con sus seres queridos en un ambiente organizado y seguro.
+        </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Qué actividades recreativas se ofrecen? 
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPreguntasFrecuentes">
+          <div class="accordion-body">
+            Ofrecemos una variedad de actividades recreativas, incluyendo talleres de manualidades, clases de ejercicio, sesiones de música y actividades al aire libre. Nuestro objetivo es mantener a nuestros residentes activos y comprometidos, promoviendo su bienestar físico y emocional.
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer"></footer>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+  var accordions = document.querySelectorAll('.accordion-button');
+  
+  accordions.forEach(function(accordion) {
+    accordion.addEventListener('click', function() {
+      var collapse = this.getAttribute('data-bs-target');
+      var isCollapsed = document.querySelector(collapse).classList.contains('show');
+      
+      accordions.forEach(function(element) {
+        element.setAttribute('aria-expanded', 'false');
+      });
+      
+      this.setAttribute('aria-expanded', 'true');
+      
+      if (!isCollapsed) {
+        accordions.forEach(function(element) {
+          var targetCollapse = element.getAttribute('data-bs-target');
+          if (targetCollapse !== collapse) {
+            document.querySelector(targetCollapse).classList.remove('show');
+          }
+        });
+      }
+    });
+  });
+</script>
 {% endblock %}

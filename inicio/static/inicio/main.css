@@ -175,5 +175,68 @@ body {
   .column a:hover {
     color: #F29F05; 
   }
-  
 
+/*=========================NOSOTROS================================*/
+
+#intro {
+  font-size: 18px; 
+}
+
+.fs-2 {
+  text-align: center; 
+}
+
+@media (max-width: 768px) {
+  #intro {
+    font-size: 16px; 
+  }
+}
+
+  
+/*=========================PREGUNTAS FRECUENTES================================*/
+
+.banner-preguntas-frecuentes {
+    position: relative;
+    height: 27rem;
+}
+
+.banner-preguntas-frecuentes img {
+  width: 100%;
+  height: auto;
+}
+
+.container-preguntas-frecuentes {
+  background-color: #f8f9fa; 
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.container-preguntas-frecuentes h1 {
+  color: #333;
+}
+
+.container-preguntas-frecuentes .accordion-button {
+  color: #F29F05; 
+  background-color: #fff;
+  border: 1px solid #F29F05; 
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.container-preguntas-frecuentes .accordion-button:hover {
+  background-color: #F29F05; 
+  color: #fff; 
+}
+
+.container-preguntas-frecuentes .accordion-button.collapsed {
+  background-color: #fff; 
+  color: #F29F05;
+}
+
+.container-preguntas-frecuentes .accordion-body {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
