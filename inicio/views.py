@@ -14,13 +14,14 @@ def login_sesion(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["contrasena"]
-        user = authenticate(username=username,password=password)
+        user = authenticate(request, username=username, password=password)        
         if user is not None:
             print("Usuario autenticado...")
             login(request, user)
             return redirect('index')
         else:
-            return render(request,'inicio/login.html')
+            mensaje = "Usuario o contraseña incorrectos."
+            return render(request, 'login.html', {'mensaje': mensaje})
     else:
         return render(request,'inicio/login.html')
     
