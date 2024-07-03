@@ -2,11 +2,14 @@ from django.urls import reverse # type: ignore
 from django.shortcuts import render, redirect # type: ignore
 from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect # type: ignore
 from django.views import View # type: ignore
-from django.contrib.auth.models import User, Aportador # type: ignore
+from django.contrib.auth.models import User # type: ignore
 from django.contrib.auth import login, authenticate, logout  # type: ignore
 from django.contrib import messages # type: ignore
 from django.contrib.auth.decorators import login_required # type: ignore
 from .forms import AportadorForm
+
+from .models import Aportador
+
 
 
 # Create your views here.
@@ -141,9 +144,9 @@ def perfil(request):
         print("Error, perfil no existe...")
         return redirect('index')
     
-    def crud_aportador(request):
-        aportador = Aportador.objects.all()
-        context = {'aportador':aportador}
-        print('enviando datos aportador_list')
-        return render(request,"inicio/aportador_list.html",context)
+def crud_aportador(request):
+    aportador = Aportador.objects.all()
+    context = {'aportadores': aportador}
+    print('enviando datos aportador_list')
+    return render(request, "inicio/aportador_list.html", context)
 
