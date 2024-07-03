@@ -3,58 +3,34 @@
 
 {% block contenido %}
 
-  <!-- Banner principal -->
-  <section class="container py-5">
+<section class="banner-donaciones">
+    <img src="{% static 'inicio/images/banner_donaciones' %}" class="img-fluid" alt="Banner donaciones">
+  </section>
+
+
+  <section class="container-preguntas-frecuentes py-5">
     <div class="row">
-      <div class="col-md-6 d-flex align-items-center">
-        <div class="text-center">
-          <h1 class="p-3 fs-2"><span>Apoya Nuestra Causa</span></h1>
-          <p class="p-3 fs-5 text-left">
-            Tu ayuda es vital para continuar nuestra misión de brindar cuidado y apoyo a quienes más lo necesitan. Con tu donación,
-            podemos asegurar que nuestros ancianos reciban el amor y la atención que merecen. Únete a nosotros y marca la diferencia.
-            <br />
-            <br />
-            Cada contribución, grande o pequeña, cuenta. Juntos, podemos seguir ofreciendo un hogar lleno de cariño y dignidad.
-            ¡Gracias por tu generosidad!
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6 d-flex align-items-center">
-        <img src="{% static 'inicio/images/banner-donaciones.png' %}" class="img-fluid" alt="Imagen de donaciones">
+      <div class="col-md-12">
+        <h1 class="text-center mb-5">Preguntas Frecuentes</h1>
       </div>
     </div>
-  </section>
+
+    <section class="d-flex flex-column justify-content-center align-items-center pt-5 text-center w-50 m-auto" id="intro">
+        <h1 class="p-3 fs-2 border-top border-3"><span>Apoya Nuesta Causa</span></h1>
+        <p class="p-3 fs-4">
+            Tu ayuda es vital para continuar nuestra misión de brindar cuidado y apoyo a quienes más lo necesitan. Con tu donación, podemos asegurar que nuestros ancianos reciban el amor y la atención que merecen. Únete a nosotros y marca la diferencia.
+          <br />
+          <br />
+          Cada contribución, grande o pequeña, cuenta. Juntos, podemos seguir ofreciendo un hogar lleno de cariño y dignidad. ¡Gracias por tu generosidad!
+        </p>
+      </section>
+      <br />
+      <hr class="separator" />
+      <br />
 
   <hr class="separator" />
 
 
-  <section class="bg-light py-5">
-    <div class="container text-center">
-      <h2>Consulta Nuestras Donaciones</h2>
-      <br>
-      <a href="#" class="btn btn-primary btn-lg">Consultar Donaciones</a>
-    </div>
-  </section>
-
-  <hr class="separator" />
-
- 
-  <section class="container py-5">
-    <div class="row">
-      <div class="col-md-6 d-flex align-items-center">
-        <div class="text-center">
-          <h2>Consulta Nuestros Donantes</h2>
-          <br>
-          <a href="#" class="btn btn-secondary btn-lg">Consultar Donantes</a>
-        </div>
-      </div>
-      <div class="col-md-6 d-flex align-items-center">
-        <img src="{% static 'inicio/images/banner_donaciones.png' %}" class="img-fluid" alt="Imagen de donantes">
-      </div>
-    </div>
-  </section>
-
-  <hr class="separator" />
 
   <!-- FOOTER -->
   <footer class="footer"></footer>
