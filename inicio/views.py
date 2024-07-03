@@ -11,19 +11,23 @@ from django.contrib.auth.decorators import login_required # type: ignore
 # Create your views here.
 
 def login_sesion(request):
-    if request.method == "POST":
-        username = request.POST["username"]
-        password = request.POST["contrasena"]
-        user = authenticate(request, username=username, password=password)        
-        if user is not None:
-            print("Usuario autenticado...")
-            login(request, user)
-            return redirect('index')
+    error_message = None
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        if username and password:
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')
+            else:
+                error_message = 'Credenciales inválidas. Inténtelo de nuevo.'
         else:
-            mensaje = "Usuario o contraseña incorrectos."
-            return render(request, 'login.html', {'mensaje': mensaje})
-    else:
-        return render(request,'inicio/login.html')
+            error_message = 'Por favor, complete todos los campos.'
+
+    return render(request, 'inicio/login.html', {'error_message': error_message})
     
 def logout_sesion(request):
     try:
@@ -35,7 +39,10 @@ def logout_sesion(request):
 
 
 def index(request):
-    return render(request, 'inicio/inicio.html')
+    user = request.user
+    print(user)
+    context = {'user':user}                                                           
+    return render(request,'inicio/inicio.html',context)
 
 def inicio(request):
     return render(request, 'inicio.html')

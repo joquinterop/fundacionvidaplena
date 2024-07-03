@@ -95,8 +95,7 @@
             authBlock.classList.add('ms-2', 'me-auto');
     
             // Aquí se verifica si el usuario está autenticado
-            // En Django, puedes acceder al estado de autenticación con {{ user.is_authenticated }}
-            const isAuthenticated = {{ user.is_authenticated|lower }} === 'true'; 
+            const isAuthenticated = {{ user.is_authenticated|lower }} === 'true';
     
             if (isAuthenticated) {
                 const dropdownMenu = document.createElement('ul');
@@ -125,6 +124,7 @@
             document.body.prepend(navbar);
         });
     </script>
+    
     
     {% block contenido %}
     {% endblock %}
