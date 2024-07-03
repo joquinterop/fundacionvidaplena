@@ -10,8 +10,8 @@ def index(request):
 def home(request):
     return render(request, 'inicio.html')
 
-def ubicacion(request):
-    return render(request, 'inicio/ubicacion.html')
+def nosotros(request):
+    return render(request, 'inicio/nosotros.html')
 
 def servicios(request):
     return render(request, 'inicio/servicios.html')
