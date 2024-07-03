@@ -179,7 +179,7 @@ def aportador_del(request, pk):
 
     context = {
         'aportadores': Aportador.objects.all(),
-        'mensaje': mensaje  # Pasa el mensaje al contexto
+        'mensaje': mensaje  
     }
     return render(request, 'inicio/aportador_list.html', context)
 
