@@ -19,7 +19,7 @@ urlpatterns = [
     path('crud_aportador/', views.crud_aportador, name='crud_aportador'),
     path('aportadorAdd',views.aportadorAdd,name='aportadorAdd'),
     path('aportador_del/<str:pk>',views.aportador_del,name='aportador_del'),
-     path('aportador_edit/<int:pk>/', views.aportador_edit, name='aportador_edit'),
-     path('aportador_list/', views.aportador_list, name='aportador_list'),
+    path('aportador_edit/<int:pk>/', views.aportador_edit, name='aportador_edit'),
+
      
 ]

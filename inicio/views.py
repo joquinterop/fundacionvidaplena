@@ -169,32 +169,27 @@ def aportadorAdd(request):
         context = {'form':form}
         return render(request,'inicio/aportador_add.html',context)
     
-def aportador_del(request,pk):
-    mensajes = []
-    errores = []
-    aportadores = Aportador.objects.all()
+def aportador_del(request, pk):
     try:
-        aportador = Aportador.objects.get(id_aportador=pk)
-        context = {}
-        if aportador :
-            aportador.delete()
-            mensajes.append("Bien, datos eliminados...")
-            context = {'aportadores':aportador,'mensajes':mensajes,'errores':errores}
-            return render(request,'inicio/aportador_list.html',context)
-    except:
-        print('Error, id no existe...')
-        aportadores = Aportador.objects.all()
-        mensaje = "Error, id no existe..."
-        context = {"mensaje":mensaje,"aportadores":aportadores}
-        return render(request,'inicio/aportador_list.html',context)
-    
+        aportador = get_object_or_404(Aportador, usuario_ptr_id=pk)
+        aportador.delete()
+        mensaje = "Datos eliminados correctamente."
+    except Aportador.DoesNotExist:
+        mensaje = "Error: El ID especificado no existe."
+
+    context = {
+        'aportadores': Aportador.objects.all(),
+        'mensaje': mensaje  # Pasa el mensaje al contexto
+    }
+    return render(request, 'inicio/aportador_list.html', context)
+
 def aportador_edit(request, pk):
     aportador = get_object_or_404(Aportador, usuario_ptr_id=pk)  # Obtener el aportador por su id_aportador
     if request.method == 'POST':
         form = AportadorForm(request.POST, instance=aportador)
         if form.is_valid():
             form.save()
-            return redirect('aportador_list')  # Redirigir a la lista de aportadores después de guardar
+            return redirect('crud_aportador')  # Redirigir a la lista de aportadores después de guardar
     else:
         form = AportadorForm(instance=aportador)
     return render(request, 'inicio/aportador_edit.html', {'form': form})
