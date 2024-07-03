@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+
+<body>
+    <h1>Listado de Aportadores</h1>
+    <br>
+    <button type="button">
+        <a href="{% url 'aportadorAdd'%}">Agregar</a>
+    </button>
+    <!--{% for aportador in aportador %}
+        {{aportador.rut}}, {{aportador.nombre}}, {{aportador.apellido}},  {{aportador.id_aportador.aportador}}<br>
+    {% endfor %}-->
+    <div id="idMensaje">
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+    </div>
+
+    <table>
+        {% if aportador %}
+            <th>Aportador</th>
+            <th>Eliminar</th>
+            <th>Modificar</th>
+            {% for aportador in aportador %}
+                <tr>
+                    <td>{{ aportador.aportador }}</td>
+                    <td><a href="{% url 'aportador_del' pk=aportador.id_aportador %}">Eliminar</a></td>
+                    <td><a href="{% url 'aportador_edit' pk=aportador.id_aportador %}">Modificar</a></td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#idMensaje").delay(200).fadeOut("slow");
+        });
+    </script>
+</body>
+
+</html>

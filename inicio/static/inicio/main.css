@@ -349,3 +349,27 @@ body {
 .link-secondary:hover {
   text-decoration: underline;
 }
+
+/*=========================DONACIONES================================*/
+
+
+.btn-primary-donaciones {
+  background-color: #F29F05;
+  color: #fff;
+}
+
+.btn-primary-donaciones:hover {
+  background-color: #F29F05;
+  color: #fff;
+}
+
+/* Estilos para el botón de Consultar Donantes */
+.btn-secondary-donantes {
+  background-color: #F29F05;
+  color: #fff;
+}
+
+.btn-secondary-donantes:hover {
+  background-color: #F29F05;
+  color: #fff;
+}
