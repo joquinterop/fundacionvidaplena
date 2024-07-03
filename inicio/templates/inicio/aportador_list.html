@@ -1,42 +1,53 @@
 {% extends 'inicio/base.html' %}
+{% load static %}
 {% block contenido %}
-
-<section class="banner-donantes">
-    <img src="{% static 'inicio/images/banner_donantes.png' %}" class="img-fluid" alt="Banner donantes">
+  <section class="banner-donantes">
+    <img src="{% static 'inicio/images/banner_donantes.png' %}" class="img-fluid" alt="Banner donantes" />
   </section>
 
+  <div class="container py-4">
+    <h1 class="text-center">Listado de Donantes</h1>
 
-
-    <h1>Listado de Donantes</h1>
-    <br>
-    <button type="button">
-        <a href="{% url 'aportadorAdd' %}">Agregar</a>
-    </button>
-    
     <div id="idMensaje">
-        {% if mensaje %}
-            <p>{{ mensaje }}</p>
-        {% endif %}
+      {% if mensaje %}
+        <p>{{ mensaje }}</p>
+      {% endif %}
     </div>
 
-    <table>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover mx-auto" style="width: 80%;">
         {% if aportadores %}
-            <thead>
-                <tr>
-                    <th>Aportador</th>
-                    <th>Eliminar</th>
-                    <th>Modificar</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for aportador in aportadores %}
-                    <tr>
-                        <td>{{ aportador.nombre }} {{ aportador.apellido }}</td>
-                        <td><a href="{% url 'aportador_del' pk=aportador.usuario_ptr_id %}">Eliminar</a></td>
-                        <td><a href="{% url 'aportador_edit' pk=aportador.usuario_ptr_id %}">Modificar</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
+          <thead class="thead-dark">
+            <tr>
+              <th>Aportador</th>
+              <th>Eliminar</th>
+              <th>Modificar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for aportador in aportadores %}
+              <tr>
+                <td>{{ aportador.nombre }} {{ aportador.apellido }}</td>
+                <td>
+                  <a href="{% url 'aportador_del' pk=aportador.usuario_ptr_id %}">Eliminar</a>
+                </td>
+                <td>
+                  <a href="{% url 'aportador_edit' pk=aportador.usuario_ptr_id %}">Modificar</a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
         {% endif %}
-    </table>
-{% endblock contenido %}
+      </table>
+    </div>
+
+    <div class="text-center">
+      <button type="button" class="btn btn-primary">
+        <a href="{% url 'aportadorAdd' %}" class="text-white">Agregar</a>
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer"></footer>
+{% endblock %}

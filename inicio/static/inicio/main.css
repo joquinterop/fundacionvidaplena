@@ -373,3 +373,10 @@ body {
   background-color: #F29F05;
   color: #fff;
 }
+
+/*=========================BANNER DONANTES================================*/
+
+.banner-donantes {
+  position: relative;
+  height: 27rem;
+}

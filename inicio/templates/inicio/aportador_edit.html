@@ -3,11 +3,18 @@
 
 {% block contenido %}
     <h1>Editar Aportador</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar Cambios</button>
-    </form>
-    <br>
-    <a href="{% url 'crud_aportador' %}">Cancelar</a>
+    <div class="container perfil">
+        <form method="post">
+            {% csrf_token %}
+            <table class="table">
+                {{ form.as_table }}
+            </table>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+        <br>
+        <a href="{% url 'crud_aportador' %}" class="btn btn-secondary">Cancelar</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer"></footer>
 {% endblock contenido %}

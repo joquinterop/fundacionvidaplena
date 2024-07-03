@@ -2,23 +2,30 @@
 {% load static %}
 
 {% block contenido %}
-    <h1>Agregar Aportadores</h1>
-    
-    <form action="{% url 'aportadorAdd' %}" method="POST">
+<div class="container py-4">
+    <h1 class="mb-4">Agregar Donantes</h1>
+
+    <form action="{% url 'aportadorAdd' %}" method="POST" class="mb-4">
         {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <input type="submit" name="opcion" value="Agregar">
+        <div class="form-group">
+            <table class="table table-bordered">
+                {{ form.as_table }}
+            </table>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
     </form>
-    
-    <br><br>
-    <a href="{% url 'crud_aportador' %}">Volver</a>
-    
-    <br>
+
+    <div class="mb-4">
+        <a href="{% url 'crud_aportador' %}" class="btn btn-secondary">Volver</a>
+    </div>
+
     <div id="idMensaje">
         {% if mensaje %}
-            {{ mensaje }}
+            <div class="alert alert-success">{{ mensaje }}</div>
         {% endif %}
     </div>
+</div>
+
+    <!-- FOOTER -->
+    <footer class="footer"></footer>
 {% endblock contenido %}
