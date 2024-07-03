@@ -1,0 +1,22 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+{% block contenido %}
+       
+{% if aportador %}
+            <h1>Modificar Aportador</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_table}}
+                <input type="submit" name="opcion" value="Agregar">
+            </form> <br><br>
+            <br>
+            <div id="idMensaje">
+                {% if mensaje %}
+                    {{mensaje}}
+                {% endif %}
+            </div>
+            <br>
+            <a href="{% url 'crud_aportador' %}">Volver</a>
+        {% endif %}
+    </div>
+    {% endblock contenido %}

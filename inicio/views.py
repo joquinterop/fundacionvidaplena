@@ -150,3 +150,67 @@ def crud_aportador(request):
     print('enviando datos aportador_list')
     return render(request, "inicio/aportador_list.html", context)
 
+def aportadorAdd(request):
+    print("estoy en controlador aportadorAdd...")
+    context = {}
+    if request.method == "POST":
+        print("controlador es un post...")
+        form = AportadorForm(request.POST)
+        if form.is_valid:
+            print("estoy en agregar, is_valid")
+            form.save()
+
+            form = AportadorForm()
+
+            context = {'mensaje':'Ok, datos grabados...','form':form}
+            return render(request,"inicio/aportador_add.html",context)
+    else:
+        form = AportadorForm()
+        context = {'form':form}
+        return render(request,'alumnos/aportador_add.html',context)
+    
+def aportador_del(request,pk):
+    mensajes = []
+    errores = []
+    aportadores = Aportador.objects.all()
+    try:
+        aportador = Aportador.objects.get(id_aportador=pk)
+        context = {}
+        if aportador :
+            aportador.delete()
+            mensajes.append("Bien, datos eliminados...")
+            context = {'aportadores':aportador,'mensajes':mensajes,'errores':errores}
+            return render(request,'inicio/aportador_list.html',context)
+    except:
+        print('Error, id no existe...')
+        aportadores = Aportador.objects.all()
+        mensaje = "Error, id no existe..."
+        context = {"mensaje":mensaje,"aportadores":aportadores}
+        return render(request,'inicio/aportador_list.html',context)
+    
+def aportador_edit(request,pk):
+    try:
+        aportador = Aportador.objects.get(id_aportador=pk)
+        context = {}
+        if aportador:
+            print("Edit encontro el aportador...")
+            if request.method == "POST":
+                print("Edit, es un post...")
+                form = AportadorForm(request.POST,instance=aportador)
+                form.save()
+                mensaje = "Bien, datos actualizados..."
+                print(mensaje)
+                context = {"aportador":aportador,"form":form,"mensaje":mensaje}
+                return render(request,'alumnos/generos_edit.html',context)
+            else:
+                print("Edit, no es un post...")
+                form = AportadorForm(instance=aportador)
+                mensaje = ""
+                context = {"aportador":aportador,"form":form,"mensaje":mensaje}
+                return render(request,'alumnos/generos_edit.html',context)
+    except:
+        print("Error, id no existe...")
+        aportadores = Aportador.objects.all()
+        mensaje = "Error, id no existe..."
+        context = {"mensaje":mensaje,"aportadores":aportadores}
+        return render(request,'inicio/aportador_list.html',context)
