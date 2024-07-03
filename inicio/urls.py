@@ -1,4 +1,5 @@
 from django.urls import path # type: ignore
+from .views import RegisterView
 
 from . import views
 
@@ -11,4 +12,6 @@ urlpatterns = [
     path('inicio/contacto/', views.contacto, name='contacto'),
     path('inicio/blog/', views.blog, name='blog'),
     path('inicio/donaciones/', views.donaciones, name='donaciones'),
+    path('register/', RegisterView.as_view(), name='register'),
+
 ]

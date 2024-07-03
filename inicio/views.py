@@ -1,6 +1,10 @@
 from django.urls import reverse # type: ignore
-from django.shortcuts import render # type: ignore
+from django.shortcuts import render, redirect # type: ignore
 from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect # type: ignore
+from django.views import View # type: ignore
+from django.contrib.auth.models import User # type: ignore
+from django.contrib.auth import login # type: ignore
+from django.contrib import messages # type: ignore
 
 # Create your views here.
 
@@ -27,3 +31,56 @@ def blog(request):
 
 def donaciones(request):
     return render(request, 'inicio/donaciones.html')
+
+class RegisterView(View):
+    def get(self, request):
+        return render(request, 'register.html')
+
+    def post(self, request):
+        nombre = request.POST['nombre']
+        apellido = request.POST['apellido']
+        email = request.POST['email']
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
+        
+        if password == confirm_password:
+            if User.objects.filter(username=email).exists():
+                messages.error(request, 'El correo electrónico ya está en uso.')
+            else:
+                user = User.objects.create_user(
+                    username=email, 
+                    email=email, 
+                    password=password, 
+                    first_name=nombre, 
+                    last_name=apellido,
+                    tipo_usuario='invitado'  # Establecer el tipo de usuario como "invitado"
+                )
+                user.save()
+                login(request, user)
+                return redirect('index')
+        else:
+            messages.error(request, 'Las contraseñas no coinciden.')
+        
+        return render(request, 'register.html')
+    def get(self, request):
+        return render(request, 'register.html')
+
+    def post(self, request):
+        nombre = request.POST['nombre']
+        apellido = request.POST['apellido']
+        email = request.POST['email']
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
+        
+        if password == confirm_password:
+            if User.objects.filter(username=email).exists():
+                messages.error(request, 'El correo electrónico ya está en uso.')
+            else:
+                user = User.objects.create_user(username=email, email=email, password=password, first_name=nombre, last_name=apellido)
+                user.save()
+                login(request, user)
+                return redirect('index')
+        else:
+            messages.error(request, 'Las contraseñas o el usuario estan erroneos')
+        
+        return render(request, 'register.html')
