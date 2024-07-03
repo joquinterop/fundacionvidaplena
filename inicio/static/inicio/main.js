@@ -7,17 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.createElement('div');
     container.classList.add('container');
 
-    
-  
-    // Agregar la imagen del logo a la izquierda
     const logoImage = document.createElement('img');
-    logoImage.src = '/static/inicio/images/logo_blanco.png'; // Asegúrate de que la ruta sea correcta
+    logoImage.src = '/static/inicio/images/logo_blanco.png'; 
     logoImage.classList.add('logo-img');
   
     const brand = document.createElement('a');
     brand.classList.add('navbar-brand');
   
-    // Incluir el logo y el texto "VIDA PLENA"
     brand.innerHTML = `
         ${logoImage.outerHTML}
         <span class="fs-5 text-white fw-bold">Vida Plena</span>
@@ -41,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ul.classList.add('navbar-nav', 'me-auto', 'mb-2', 'mb-lg-0');
   
     const menuItems = [
-        { text: 'Inicio', href: 'Index.html' },
+        { text: 'Inicio', href: "{% url 'inicio' %}" },
         { text: 'Ubicación', href: '#' },
         { text: 'Servicios', href: '#' },
         { text: 'Preguntas Frecuentes', href: '#' },
