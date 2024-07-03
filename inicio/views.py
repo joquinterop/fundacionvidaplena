@@ -167,7 +167,7 @@ def aportadorAdd(request):
     else:
         form = AportadorForm()
         context = {'form':form}
-        return render(request,'alumnos/aportador_add.html',context)
+        return render(request,'inicio/aportador_add.html',context)
     
 def aportador_del(request,pk):
     mensajes = []
@@ -201,13 +201,13 @@ def aportador_edit(request,pk):
                 mensaje = "Bien, datos actualizados..."
                 print(mensaje)
                 context = {"aportador":aportador,"form":form,"mensaje":mensaje}
-                return render(request,'alumnos/generos_edit.html',context)
+                return render(request,'inicio/aportador_edit.html',context)
             else:
                 print("Edit, no es un post...")
                 form = AportadorForm(instance=aportador)
                 mensaje = ""
                 context = {"aportador":aportador,"form":form,"mensaje":mensaje}
-                return render(request,'alumnos/generos_edit.html',context)
+                return render(request,'aportador_edit.html',context)
     except:
         print("Error, id no existe...")
         aportadores = Aportador.objects.all()
