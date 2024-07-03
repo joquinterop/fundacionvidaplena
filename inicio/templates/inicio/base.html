@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
     <link rel="stylesheet" href="{% static 'inicio/main.css' %}" />
     <script src="https://kit.fontawesome.com/4f8f9ca200.js" crossorigin="anonymous"></script>
@@ -20,25 +22,29 @@
     <!--NAVBAR-->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Creación del navbar
             const navbar = document.createElement('nav');
             navbar.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'p-3');
             navbar.id = 'menu';
-
+    
+            // Contenedor principal
             const container = document.createElement('div');
             container.classList.add('container');
-
+    
+            // Logo
             const logoImage = document.createElement('img');
             logoImage.src = '{% static "inicio/images/logo_blanco.png" %}';
             logoImage.classList.add('logo-img');
-
+    
+            // Brand (nombre de la marca)
             const brand = document.createElement('a');
             brand.classList.add('navbar-brand');
-
             brand.innerHTML = `
                 ${logoImage.outerHTML}
                 <span class="fs-5 text-white fw-bold">Vida Plena</span>
             `;
-
+    
+            // Botón de toggle para móviles
             const toggleButton = document.createElement('button');
             toggleButton.classList.add('navbar-toggler');
             toggleButton.type = 'button';
@@ -48,14 +54,17 @@
             toggleButton.setAttribute('aria-expanded', 'false');
             toggleButton.setAttribute('aria-label', 'Toggle navigation');
             toggleButton.innerHTML = `<span class="navbar-toggler-icon"></span>`;
-
+    
+            // División para el contenido colapsable
             const collapseDiv = document.createElement('div');
             collapseDiv.classList.add('collapse', 'navbar-collapse');
             collapseDiv.id = 'navbarSupportedContent';
-
+    
+            // Lista de elementos del menú
             const ul = document.createElement('ul');
             ul.classList.add('navbar-nav', 'me-auto', 'mb-2', 'mb-lg-0');
-
+    
+            // Definición de elementos del menú
             const menuItems = [
                 { text: 'Inicio', href: '{% url 'index' %}' },
                 { text: 'Nosotros', href: '{% url 'nosotros' %}' },
@@ -65,38 +74,81 @@
                 { text: 'Blog', href: '#' },
                 { text: 'Donaciones', href: '#' }
             ];
-
+    
+            // Creación de los elementos del menú
             menuItems.forEach(item => {
                 const li = document.createElement('li');
                 li.classList.add('nav-item');
-
+    
                 const a = document.createElement('a');
                 a.classList.add('nav-link');
                 a.href = item.href;
                 a.textContent = item.text;
-
+    
                 li.appendChild(a);
                 ul.appendChild(li);
             });
-
+    
+            // Agregar la lista al contenido colapsable
             collapseDiv.appendChild(ul);
             container.appendChild(brand);
             container.appendChild(toggleButton);
             container.appendChild(collapseDiv);
-            navbar.appendChild(container);
-
-            // Botón de inicio de sesión
+    
+            // Crear el botón de login con un nuevo icono
             const loginButton = document.createElement('button');
             loginButton.classList.add('btn', 'btn-outline-light', 'ms-auto');
-            loginButton.innerHTML = `<i class="bi bi-person"></i>`;
-            loginButton.setAttribute('data-bs-toggle', 'modal');
-            loginButton.setAttribute('data-bs-target', '#loginModal');
-
-            container.appendChild(loginButton);
-
+            loginButton.type = 'button';
+            loginButton.dataset.bsToggle = 'modal';
+            loginButton.dataset.bsTarget = '#loginModal'; // Ajusta el ID según tu modal de login
+            loginButton.innerHTML = `
+                <i class="fas fa-user"></i> <!-- Icono de usuario -->
+            `;
+    
+            // Crear el bloque condicional de autenticación
+            const authBlock = document.createElement('div');
+            authBlock.classList.add('ms-2'); // Ajusta los márgenes según tu diseño
+    
+            // Aquí se verifica si el usuario está autenticado
+            // En Django, puedes acceder al estado de autenticación con {{ user.is_authenticated }}
+            const isAuthenticated = {{ user.is_authenticated|lower }} === 'true'; // Convertir a booleano
+    
+            if (isAuthenticated) {
+                // Si el usuario está autenticado, muestra el menú desplegable con su nombre
+                const dropdownMenu = document.createElement('ul');
+                dropdownMenu.classList.add('dropdown-menu', 'dropdown-menu-end'); // Ajusta el alineamiento
+                dropdownMenu.innerHTML = `
+                    <li><a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'logout_sesion' %}">Cerrar Sesión</a></li>
+                `;
+                const dropdownToggle = document.createElement('a');
+                dropdownToggle.classList.add('nav-link', 'dropdown-toggle');
+                dropdownToggle.href = '#';
+                dropdownToggle.setAttribute('role', 'button');
+                dropdownToggle.setAttribute('data-bs-toggle', 'dropdown');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+                dropdownToggle.textContent = '{{ user.username }}';
+                dropdownToggle.appendChild(dropdownMenu);
+                authBlock.appendChild(dropdownToggle);
+            } else {
+                // Si el usuario no está autenticado, muestra el botón de inicio de sesión
+                const loginLink = document.createElement('a');
+                loginLink.classList.add('btn', 'btn-outline-primary');
+                loginLink.href = '{% url 'login_sesion' %}'; // Ajusta la URL de inicio de sesión
+                loginLink.textContent = 'Iniciar Sesión';
+                authBlock.appendChild(loginLink);
+            }
+    
+            // Agregar el bloque de autenticación al navbar
+            container.appendChild(authBlock);
+    
+            // Agregar todo el navbar al body del documento
+            navbar.appendChild(container);
             document.body.prepend(navbar);
         });
     </script>
+    
 
     <!--MODAL PARA INICIO DE SESION-->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">

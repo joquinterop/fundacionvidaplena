@@ -13,5 +13,8 @@ urlpatterns = [
     path('inicio/blog/', views.blog, name='blog'),
     path('inicio/donaciones/', views.donaciones, name='donaciones'),
     path('register/', RegisterView.as_view(), name='register'),
-
+    path('perfil',views.perfil,name='perfil'),
+    path('login_sesion', views.login_sesion, name='login_sesion'),
+    path('logout_sesion', views.logout_sesion, name='logout_sesion'),
+     
 ]
