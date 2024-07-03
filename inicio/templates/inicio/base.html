@@ -22,29 +22,24 @@
     <!--NAVBAR-->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Creación del navbar
             const navbar = document.createElement('nav');
             navbar.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'p-3');
             navbar.id = 'menu';
     
-            // Contenedor principal
             const container = document.createElement('div');
-            container.classList.add('container');
+            container.classList.add('container', 'd-flex', 'justify-content-center');
     
-            // Logo
             const logoImage = document.createElement('img');
             logoImage.src = '{% static "inicio/images/logo_blanco.png" %}';
-            logoImage.classList.add('logo-img');
+            logoImage.classList.add('logo-img', 'me-2'); // Ajusta el margen derecho
     
-            // Brand (nombre de la marca)
             const brand = document.createElement('a');
-            brand.classList.add('navbar-brand');
+            brand.classList.add('navbar-brand', 'me-auto');
             brand.innerHTML = `
                 ${logoImage.outerHTML}
                 <span class="fs-5 text-white fw-bold">Vida Plena</span>
             `;
     
-            // Botón de toggle para móviles
             const toggleButton = document.createElement('button');
             toggleButton.classList.add('navbar-toggler');
             toggleButton.type = 'button';
@@ -55,16 +50,13 @@
             toggleButton.setAttribute('aria-label', 'Toggle navigation');
             toggleButton.innerHTML = `<span class="navbar-toggler-icon"></span>`;
     
-            // División para el contenido colapsable
             const collapseDiv = document.createElement('div');
             collapseDiv.classList.add('collapse', 'navbar-collapse');
             collapseDiv.id = 'navbarSupportedContent';
     
-            // Lista de elementos del menú
             const ul = document.createElement('ul');
             ul.classList.add('navbar-nav', 'me-auto', 'mb-2', 'mb-lg-0');
     
-            // Definición de elementos del menú
             const menuItems = [
                 { text: 'Inicio', href: '{% url 'index' %}' },
                 { text: 'Nosotros', href: '{% url 'nosotros' %}' },
@@ -75,7 +67,6 @@
                 { text: 'Donaciones', href: '#' }
             ];
     
-            // Creación de los elementos del menú
             menuItems.forEach(item => {
                 const li = document.createElement('li');
                 li.classList.add('nav-item');
@@ -89,34 +80,27 @@
                 ul.appendChild(li);
             });
     
-            // Agregar la lista al contenido colapsable
             collapseDiv.appendChild(ul);
             container.appendChild(brand);
             container.appendChild(toggleButton);
             container.appendChild(collapseDiv);
     
-            // Crear el botón de login con un nuevo icono
-            const loginButton = document.createElement('button');
-            loginButton.classList.add('btn', 'btn-outline-light', 'ms-auto');
-            loginButton.type = 'button';
-            loginButton.dataset.bsToggle = 'modal';
-            loginButton.dataset.bsTarget = '#loginModal'; // Ajusta el ID según tu modal de login
-            loginButton.innerHTML = `
-                <i class="fas fa-user"></i> <!-- Icono de usuario -->
-            `;
+            const loginLink = document.createElement('a');
+            loginLink.classList.add('btn', 'btn-outline-light', 'ms-auto');
+            loginLink.href = '{% url 'login_sesion' %}';
+            loginLink.innerHTML = `<i class="fas fa-user"></i>`;
     
             // Crear el bloque condicional de autenticación
             const authBlock = document.createElement('div');
-            authBlock.classList.add('ms-2'); // Ajusta los márgenes según tu diseño
+            authBlock.classList.add('ms-2', 'me-auto');
     
             // Aquí se verifica si el usuario está autenticado
             // En Django, puedes acceder al estado de autenticación con {{ user.is_authenticated }}
-            const isAuthenticated = {{ user.is_authenticated|lower }} === 'true'; // Convertir a booleano
+            const isAuthenticated = {{ user.is_authenticated|lower }} === 'true'; 
     
             if (isAuthenticated) {
-                // Si el usuario está autenticado, muestra el menú desplegable con su nombre
                 const dropdownMenu = document.createElement('ul');
-                dropdownMenu.classList.add('dropdown-menu', 'dropdown-menu-end'); // Ajusta el alineamiento
+                dropdownMenu.classList.add('dropdown-menu', 'dropdown-menu-end');
                 dropdownMenu.innerHTML = `
                     <li><a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a></li>
                     <li><hr class="dropdown-divider"></li>
@@ -132,52 +116,16 @@
                 dropdownToggle.appendChild(dropdownMenu);
                 authBlock.appendChild(dropdownToggle);
             } else {
-                // Si el usuario no está autenticado, muestra el botón de inicio de sesión
-                const loginLink = document.createElement('a');
-                loginLink.classList.add('btn', 'btn-outline-primary');
-                loginLink.href = '{% url 'login_sesion' %}'; // Ajusta la URL de inicio de sesión
-                loginLink.textContent = 'Iniciar Sesión';
                 authBlock.appendChild(loginLink);
             }
     
-            // Agregar el bloque de autenticación al navbar
             container.appendChild(authBlock);
     
-            // Agregar todo el navbar al body del documento
             navbar.appendChild(container);
             document.body.prepend(navbar);
         });
     </script>
     
-
-    <!--MODAL PARA INICIO DE SESION-->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Inicio de Sesión</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm">
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="loginEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="loginPassword" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                    </form>
-                    <hr>
-                    <p class="text-center">¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     {% block contenido %}
     {% endblock %}
 
