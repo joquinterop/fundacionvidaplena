@@ -1,4 +1,4 @@
-/*===============NAVBAR================*/
+/*===============NAVBAR================
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.createElement('nav');
     navbar.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'p-3');
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.appendChild(container);
   
     document.body.prepend(navbar);
-});
+});*/
 
 /*===============TYPEWRITER================*/
 
