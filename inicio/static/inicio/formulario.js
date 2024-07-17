@@ -27,6 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
+      // Validar formato de teléfono en Chile con +56
+      const phoneRegex = /^\+56\s?[2-9]\d{1}\s?\d{7}$/;
+      if (!phoneRegex.test(phoneInput.value.trim())) {
+        alert('Por favor, ingresa un número de teléfono válido de Chile con el formato +56 9XXXXXXXX.');
+        return;
+      }
+
       if (subjectInput.value.trim() === '') {
         alert('Por favor, ingresa el asunto.');
         return;
