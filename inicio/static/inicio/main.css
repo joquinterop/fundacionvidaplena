@@ -465,7 +465,7 @@ input, textarea {
 .button3 {
   margin-top: 20px;
   padding: 10px 20px;
-  background-image: linear-gradient(to right, #ff8a00, #da1b60);
+  background-image: linear-gradient(to right,  #F2CB05, #F29F05);
   color: white;
   border: none;
   border-radius: 3px;
@@ -474,5 +474,5 @@ input, textarea {
 }
 
 button3:hover {
-  background-image: linear-gradient(to right, #ff8a00, #da1b60);
+  background-image: linear-gradient(to right,  #F2CB05, #F29F05);
 }
