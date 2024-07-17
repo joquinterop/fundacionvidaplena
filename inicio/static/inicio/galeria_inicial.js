@@ -1,6 +1,6 @@
 async function loadImages() {
     const accessKey = 'xlbHD712R2Vu7yyRLIOhrW99RXvi2Loa3xFEK37XZmk'; 
-    const queries = ['Chile', 'Río de Janeiro'];
+    const queries = ['ancianos'];
     const imagePromises = queries.map(query => fetch(`https://api.unsplash.com/photos/random?query=${query}&count=3&client_id=${accessKey}`));
 
     try {

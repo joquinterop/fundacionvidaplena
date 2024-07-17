@@ -46,6 +46,26 @@ body {
   /* Efecto de escala al pasar el cursor sobre la imagen */
 }
 
+.btn2-container {
+  text-align: center ;
+  margin-top: 20px; 
+}
+
+.btn2 {
+  background-image: linear-gradient(to right, #F2CB05, #F29F05);
+  text-align: center ;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn2:hover {
+  background-image: linear-gradient(to right, #F29F05, #F2CB05);
+}
 
 /*===================SEPARADOR==========================*/
 .separator {
