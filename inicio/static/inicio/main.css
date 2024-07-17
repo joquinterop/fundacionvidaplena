@@ -18,6 +18,35 @@ body {
   
 }
 
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columnas iguales */
+  gap: 10px;
+  /* Espaciado entre las imágenes */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-img {
+  width: 100%;
+  /* Las imágenes ocupan todo el ancho del contenedor */
+  height: 200px;
+  /* Altura fija para todas las imágenes */
+  object-fit: cover;
+  /* Ajustar la imagen al contenedor sin deformarla */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  /* Efecto de escala al pasar el cursor sobre la imagen */
+}
+
+
 /*===================SEPARADOR==========================*/
 .separator {
     border: none;
