@@ -429,3 +429,50 @@ body {
   position: relative;
   height: 27rem;
 }
+
+/*-------------------------------- css de formulario-------------------------------------*/
+  
+.container2 {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.button3 {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-image: linear-gradient(to right, #ff8a00, #da1b60);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button3:hover {
+  background-image: linear-gradient(to right, #ff8a00, #da1b60);
+}
