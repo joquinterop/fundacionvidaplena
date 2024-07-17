@@ -1,5 +1,4 @@
 // js de formulario
-
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
   
@@ -8,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
       const nameInput = document.getElementById('name');
       const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
+      const subjectInput = document.getElementById('subject');
       const messageInput = document.getElementById('message');
   
       // Validar campos
@@ -20,6 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Por favor, ingresa tu correo electrónico.');
         return;
       }
+
+      if (phoneInput.value.trim() === '') {
+        alert('Por favor, ingresa tu teléfono.');
+        return;
+      }
+
+      if (subjectInput.value.trim() === '') {
+        alert('Por favor, ingresa el asunto.');
+        return;
+      }
   
       if (messageInput.value.trim() === '') {
         alert('Por favor, ingresa tu mensaje.');
@@ -30,4 +41,4 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('¡Formulario enviado exitosamente!');
       form.reset();
     });
-  });
+});
